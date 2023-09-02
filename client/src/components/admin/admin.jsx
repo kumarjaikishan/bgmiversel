@@ -2,13 +2,19 @@ import React, { useEffect, useState } from 'react'
 import './admin.css'
 import Playerlist from './playerlist';
 import Team from './team';
+import { useNavigate } from "react-router-dom";
 
-const Admin = ({ list, datafetch }) => {
-
+const Admin = ({ list, datafetch, isadmin, setadmin }) => {
+  let navigate = useNavigate();
   useEffect(() => {
+    if (!isadmin) {
+      navigate('/login');
+      return;
+  }
     fune();
   }, [list])
 
+  const [inp, setinp] = useState("")
   const [toggle, settoggle] = useState(false);
   const [team1, setteam1] = useState([]);
   const [team2, setteam2] = useState([]);
@@ -24,6 +30,16 @@ const Admin = ({ list, datafetch }) => {
     })
     setfilteredlist(temp);
   }
+  const handle = (e) => {
+    setinp(e.target.value);
+  }
+
+  const test = () => {
+    if (inp == "sparrowisgreat") {
+      setadmin(true)
+    }
+  }
+
   const fun = () => {
     setteam1([]);
     setteam2([]);
@@ -40,6 +56,7 @@ const Admin = ({ list, datafetch }) => {
     // console.log(team1);
     // console.log(total);
   }
+
   const finale = () => {
     // console.log(team1[3]);
     let finalone = [...team1];
@@ -59,6 +76,10 @@ const Admin = ({ list, datafetch }) => {
   }
   return (
     <div className="admin">
+      {/* <div className="modal">
+        <input type="text" placeholder='Enter password' onChange={handle} name='inp' />
+        <button onClick={test}>Submit</button>
+      </div> */}
       <div className='headcontrol'>
         <span>
           <span className='titlee'>Classic Touranment</span>
@@ -80,4 +101,4 @@ const Admin = ({ list, datafetch }) => {
   )
 }
 
-export default Admin
+export default Admin;

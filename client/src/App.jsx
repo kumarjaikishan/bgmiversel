@@ -6,7 +6,9 @@ import Navbar from './components/navbar/navbar'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Admin from './components/admin/admin';
+import Adminmid from './components/admin/adminlogin';
 import Instant from './pages/instant';
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +16,8 @@ function App() {
     datafetch();
   }, [])
   const [registereduser, setregistereduser] = useState(0);
-  const [registrationlimit,setregistrationlimit]= useState(25);
+  const [registrationlimit,setregistrationlimit]= useState(16);
+  const [isadmin,setadmin]= useState(false);
   const [matlist, setmatlist] = useState([
     //     {
     //     team1: [],
@@ -71,7 +74,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/"  element={<Homepage registereduser={registereduser} registrationlimit={registrationlimit} list={list} setlist={setlist} datafetch={datafetch} notification={notification} />} />
-        <Route path="/result" element={<Admin list={list} datafetch={datafetch} />} />
+        <Route path="/admin" element={<Admin list={list} datafetch={datafetch} isadmin={isadmin} setadmin={setadmin} />} />
+        <Route path="/login" element={<Adminmid  setadmin={setadmin} notification={notification}/>} />
         <Route path="/instant" element={<Instant matlist={matlist} setmatlist={setmatlist} list={list} />} />
       </Routes>
     </>
