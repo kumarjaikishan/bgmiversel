@@ -73,26 +73,26 @@
   }
   .admin .ano .sno{
     display: inline-block;
-     width: 50px; 
+     width: 60px; 
      height: 50px; 
+     line-height: 50px;
+     text-align: center;
      font-weight: 600;
     text-align: center;
     z-index: 5;
     background: #dde1e7;
-    display: flex;
     border-radius: 50%;
-    justify-content: center;
-    align-items: center;
     box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
   }
+ 
   .admin .ano .idname{
     display: inline-block;
-    /* border: 1px solid black; */
+    border: 1px solid rgb(225, 14, 14);
     padding: 7px 3px 7px 20px;
     border-radius: 15px;
     z-index: 3;
-    font-size: 14px;
-    width: 250px;
+    font-size: 12px;
+    width: 280px;
     height: 34px;
     overflow: hidden;
     transform: translateX(-15px);
@@ -128,7 +128,7 @@
     cursor: pointer;
   }
   .admin .staticon.pending{
-    color: orange;
+    color: rgb(124, 82, 4);
   }
   .admin .staticon.reject{
     color: red;

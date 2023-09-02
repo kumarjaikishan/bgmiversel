@@ -8,8 +8,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import DoneIcon from '@mui/icons-material/Done';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Playerlist = ({ list,datafetch }) => {
-  const playeredit = async (id,set) => {
+const Playerlist = ({ list, datafetch }) => {
+  const playeredit = async (id, set) => {
     try {
       const result = await fetch('/playerapprove', {
         method: "POST",
@@ -17,18 +17,18 @@ const Playerlist = ({ list,datafetch }) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          id,set
+          id, set
         })
       })
       const detail = await result.json();
       console.log(detail)
-      swal("Success!","User "+ set+ " Successfully", "success");
+      swal("Success!", "User " + set + " Successfully", "success");
       datafetch();
     } catch (error) {
       console.log(error);
     }
-  
-   
+
+
   }
   return (
     <div className="aggre">
@@ -41,15 +41,15 @@ const Playerlist = ({ list,datafetch }) => {
               <span>{val.id}</span>
               <span >- {val.name}</span>
               {
-              val.stat == "approve" ?
-               <ThumbUpIcon className='staticon' titleAccess='Approved' /> : 
-               val.stat == "reject" ?<CancelIcon className='staticon reject' titleAccess='Canceled' />:
-               <HourglassTopIcon className='staticon pending' titleAccess='Pending' />
+                val.stat == "approve" ?
+                  <ThumbUpIcon className='staticon' titleAccess='Approved' /> :
+                  val.stat == "reject" ? <CancelIcon className='staticon reject' titleAccess='Canceled' /> :
+                    <HourglassTopIcon className='staticon pending' titleAccess='Pending' />
               }
             </span>
-            <DoneIcon titleAccess='Approve' className='staticon ' onClick={() => playeredit(val._id,"approve")} />
-            <CloseIcon titleAccess='Reject' className='staticon ' onClick={() => playeredit(val._id,"reject")} />
-            <DeleteIcon titleAccess='Delete' className='staticon ' onClick={() => playeredit(val._id,"delete")} />
+            <DoneIcon titleAccess='Approve' className='staticon ' onClick={() => playeredit(val._id, "approve")} />
+            <CloseIcon titleAccess='Reject' className='staticon ' onClick={() => playeredit(val._id, "reject")} />
+            <DeleteIcon titleAccess='Delete' className='staticon ' onClick={() => playeredit(val._id, "delete")} />
           </div>
         })
       }

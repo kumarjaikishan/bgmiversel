@@ -12,7 +12,7 @@ const Admindis = ({setadmin,notification}) => {
     }
 
     const test = () => {
-        if (inp == "hello") {
+        if (inp == "sparrow") {
             setadmin(true)
             navigate('/admin');
             notification.success("Login Successfull", 1400)

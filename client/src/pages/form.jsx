@@ -136,6 +136,9 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
                             registereduser >= registrationlimit ? "Sorry Registration Limit Reached" : null
                         }
                     </div>
+                    <div className='alertmsg'>
+                    *Player must join Discord server for claim you Winnings 💸
+                    </div>
                 </div>
 
                 <button type="submit" onClick={submite} disabled={registereduser >= registrationlimit ? true : false}>Register Me</button>

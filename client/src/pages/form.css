@@ -71,12 +71,18 @@
     box-shadow: inset -3px -3px 7px #ffffffb0, inset 3px 3px 5px rgba(94, 104, 121, 0.692);
   }
   .form button{
+    /* color: rgb(234, 125, 15); */
+    font-weight: bolder;
     background: rgb(8, 61, 100);
+    background: linear-gradient(35deg,rgb(145, 73, 159), rgb(21, 209, 238));
     /* background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%); */
-    transition: 0.1s;
+    transition: 0.2s;
   }
+ 
   .form button:hover{
     background: rgb(4, 30, 49);
+    transform: scale(1.06);
+    background: linear-gradient(35deg, rgb(21, 209, 238),rgb(145, 73, 159));
   }
   .form .social{
     /* border: 1px solid red; */
@@ -113,6 +119,11 @@
   }
   .form .errormsg{
     color: red;
+  }
+  .form .alertmsg{
+    color: green;
+    font-size: 14px;
+    text-align: center;
   }
 
  
