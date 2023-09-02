@@ -1,25 +1,25 @@
 const mongo = require('mongoose');
 
-const expe = new mongo.Schema({
-    userid:{
+const tourna = new mongo.Schema({
+    torunaname:{
         type:String
     },
-    ledger:{
+    name:{
+        type:String,
+        required:true
+    },
+    id:{
+        type:String,
+        required:true
+    },
+    stat:{
         type:String,
         required:true
     },
     date:{
         type:String,
         required:true
-    },
-    amount:{
-        type:Number,
-        required:true
-    },
-    narration:{
-        type:String,
-        required:true
     }
 })
-const model = new mongo.model("expense",expe);
+const model = new mongo.model("Tournament",tourna);
 module.exports=model;
