@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     background: white;
   }
   .modal input{
@@ -28,12 +28,13 @@
     padding-left: 15px;
   }
   .admin .headcontrol{
-    border: 1px solid red;
+    border-bottom: 3px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
     padding-left: 150px;
+    padding-bottom: 5px;
   }
   .admin button{
     margin: 0 5px;

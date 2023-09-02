@@ -84,15 +84,13 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
   }
   return (
     <div className="admin">
-      {/* <div className="modal">
-        <input type="text" placeholder='Enter password' onChange={handle} name='inp' />
-        <button onClick={test}>Submit</button>
-      </div> */}
+     
       <div className='headcontrol'>
         <span>
           <b><span className='titlee'>M24 Touranment</span></b>
           {/* <input type="text" /> */}
         </span>
+        <span><h2>Qualified Player: {filteredlist.length}</h2><span>{filteredlist.length %2 ===0 ? null:"Make it Even Number"}</span></span>
         <span>
           <button onClick={() => settoggle(false)}>Home</button>
           <button onClick={() => settoggle(true)} >Teams</button>
