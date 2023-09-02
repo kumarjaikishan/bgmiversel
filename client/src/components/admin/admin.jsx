@@ -82,8 +82,8 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
       </div> */}
       <div className='headcontrol'>
         <span>
-          <span className='titlee'>Classic Touranment</span>
-          <input type="text" />
+         <b><span className='titlee'>M24 Touranment</span></b> 
+          {/* <input type="text" /> */}
         </span>
         <span>
           <button onClick={() => settoggle(false)}>Home</button>

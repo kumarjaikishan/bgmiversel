@@ -35,17 +35,21 @@ app.post('/addplayer', async (req, res) => {
             msg: "all fields are required"
         })
     } else {
-        const query = new model({ torunaname, name, id, date, stat });
-        const result = await query.save();
-        if (result) {
+        try {
+            const query = new model({ torunaname, name, id, date, stat });
+            const result = await query.save();
+            if (result) {
+                res.json({
+                    msg: "data inserted successfully"
+                })
+            }
+        } catch (error) {
             res.json({
-                msg: "data inserted successfully"
-            })
-        } else {
-            res.json({
-                msg: "something went wrong in db"
+                msg: "wrong",
+                data: error
             })
         }
+       
     }
 })
 //    for adding expense data into database ends here
@@ -55,30 +59,38 @@ app.post('/playerapprove', async (req, res) => {
     const { id, set } = req.body;
     // console.log(id + set)
     if(set=="delete"){
-        const result = await model.findByIdAndDelete({ _id:id });
-        if (result) {
+        try {
+            const result = await model.findByIdAndDelete({ _id:id });
+            if (result) {
+                res.json({
+                    msg: "done",
+                    data: result
+                })
+            }
+        } catch (error) {
             res.json({
-                msg: "done",
-                data: result
-            })
-        } else {
-            res.json({
-                msg: "something went wrong in db"
+                msg: "wrong",
+                data: error
             })
         }
+      
     }else{
-        const result = await model.findByIdAndUpdate({ _id: id }, { stat: set });
-        // console.log(result)
-        if (result) {
+        try {
+            const result = await model.findByIdAndUpdate({ _id: id }, { stat: set });
+            // console.log(result)
+            if (result) {
+                res.json({
+                    msg: "done",
+                    data: result
+                })
+            } 
+        } catch (error) {
             res.json({
-                msg: "done",
-                data: result
-            })
-        } else {
-            res.json({
-                msg: "something went wrong in db"
+                msg: "wrong",
+                data: error
             })
         }
+      
     }
    
 })
