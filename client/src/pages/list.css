@@ -1,0 +1,101 @@
+.list{
+    position: absolute;
+    padding-top: 20px;
+    right: 0;
+    background: #dde1e7;
+    display: flex;
+    flex-direction: column;
+  }
+  .list::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 10px;
+    height: 100%;
+    background: #dde1e7;
+  }
+  .list .aggre{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .list .ano{
+    /* border: 1px solid red; */
+    color: #242424;
+    max-width: 300px; 
+    margin: 6px 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+  }
+  .list .ano .sno{
+    display: inline-block;
+     width: 50px; 
+     height: 50px; 
+     font-weight: 600;
+    text-align: center;
+    z-index: 5;
+    background: #dde1e7;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .list .ano .idname{
+    display: inline-block;
+    /* border: 1px solid black; */
+    padding: 7px 3px 7px 20px;
+    border-radius: 15px;
+    z-index: 3;
+    font-size: 14px;
+    width: 250px;
+    overflow: hidden;
+    transform: translateX(-15px);
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .list .ano .idname span{
+    float: left;
+    margin-right: 2px;
+    display: inline-block;
+    /* border: 1px solid red; */
+  }
+  .list .stat{
+    position: absolute;
+    top: 9px;
+    border-radius: 50%;
+    right: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    background: #dde1e7;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    cursor: pointer;
+    transform: translate(-50%,-50%);
+  }
+  .list .staticon{
+    border-radius: 50%;
+    color: green;
+  }
+  .list .staticon.pending{
+    color: orange;
+  }
+  .list .staticon.reject{
+    color: red;
+  }
+  .list h2{
+    letter-spacing: 2px;
+    color: #2c2525;
+  }
+  
+ 

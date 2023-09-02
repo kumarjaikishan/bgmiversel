@@ -1,0 +1,119 @@
+.admin{
+    position: absolute;
+    padding-top: 5px;
+    left: 0;
+    width: 100%;
+    background: #dde1e7;
+    display: flex;
+    flex-direction: column;
+  }
+  .admin .headcontrol{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    padding-left: 150px;
+  }
+  .admin button{
+    margin: 0 5px;
+  }
+  .admin::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 10px;
+    height: 100%;
+    background: #dde1e7;
+  }
+  .admin .aggre{
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .admin .ano{
+    /* border: 1px solid red; */
+    color: #242424;
+    max-width: 350px; 
+    margin: 6px 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+  }
+  .admin .ano .sno{
+    display: inline-block;
+     width: 50px; 
+     height: 50px; 
+     font-weight: 600;
+    text-align: center;
+    z-index: 5;
+    background: #dde1e7;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .admin .ano .idname{
+    display: inline-block;
+    /* border: 1px solid black; */
+    padding: 7px 3px 7px 20px;
+    border-radius: 15px;
+    z-index: 3;
+    font-size: 14px;
+    width: 250px;
+    height: 34px;
+    overflow: hidden;
+    transform: translateX(-15px);
+    box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
+  }
+  .admin .ano .idname span{
+    float: left;
+    margin-right: 2px;
+    display: inline-block;
+    /* border: 1px solid red; */
+  }
+  .admin .stat{
+    position: absolute;
+    top: 9px;
+    border-radius: 50%;
+    right: 5px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    background: #dde1e7;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+    cursor: pointer;
+    transform: translate(-50%,-50%);
+  }
+  .admin .staticon{
+    border-radius: 50%;
+    transform: scale(0.8);
+    color: green;
+    cursor: pointer;
+  }
+  .admin .staticon.pending{
+    color: orange;
+  }
+  .admin .staticon.reject{
+    color: red;
+  }
+  .admin h2{
+    letter-spacing: 2px;
+    color: #2c2525;
+  }
+  .team{
+    color: grey;
+  }
+  
+ 

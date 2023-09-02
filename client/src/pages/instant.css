@@ -1,0 +1,92 @@
+.instant{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    background: white;
+    justify-content: space-between;
+    color: grey;
+    /* border: 10px solid red; */
+}
+.instant .lists{
+    width: 30%;
+    color: grey;
+    height: 100%;
+    border: 1px solid cyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.instant .lists>span{
+    width: 100%;
+    border: 1px solid blue;
+    display: flex;
+}
+.instant .lists>span>span{
+    text-align: left;
+    width: 50%;
+}
+.instant .result{
+    width: 69%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.instant .hu{
+    margin: 1px;
+    /* background: green; */
+    text-align: left;
+    /* width: 80%; */
+    height: 40px;
+    line-height: 40px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+.instant .line{
+    /* width: 450px; */
+    /* background: black; */
+    /* color: white; */
+    padding: 2px 8px;
+    border-radius: 15px;
+    margin:2px;
+}
+.instant .line.won{
+    background: green;
+    color: white;
+}
+.instant .battlemode{
+    background:rgb(35, 31, 31);
+    color: white;
+    padding: 3px 9px ;
+    font-weight: 600
+    ;
+    font-size: 0.8em;
+    border-radius: 10px;
+}
+.instant button{
+    padding: 3px 5px ;
+    font-size: 0.8em;
+    margin-left: 9px;
+    cursor: pointer;
+}
+.hu> span{
+    /* border: 1px solid red; */
+}
+.hu> span:nth-child(1){
+  width: 78%;
+}
+.hu> span:nth-child(2){
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.instant select{
+    padding: 4px 8px;
+    border-radius: 10px;
+}
