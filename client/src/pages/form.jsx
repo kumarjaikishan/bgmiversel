@@ -5,6 +5,7 @@ import AcUnitIcon from '@mui/icons-material/AcUnit';
 import FaceIcon from '@mui/icons-material/Face';
 import 'react-toastify/dist/ReactToastify.css';
 import logo from '../assets/logo.png'
+import discord from '../assets/discord.png'
 import './form.css'
 import swal from 'sweetalert'
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -141,6 +142,7 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
                 <div className='social'>
                     <span>  <a href="https://www.youtube.com/@dozplayz" target='_blank' title='Official Youtube'> <YouTubeIcon className='fat' /></a></span>
                     <span>  <a href="https://www.instagram.com/doz_playz/" target='_blank' title='Official Instagram'> <InstagramIcon className='fat' /></a></span>
+                    <span><a href="https://discord.gg/QBbHhMkuAv" target='_blank' title='Official Discord'> <img src={discord} alt="" /></a></span>
 
                 </div>
             </div>

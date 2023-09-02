@@ -72,7 +72,7 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <Navbar />
+      <Navbar setmodal={setmodal}/>
       <Routes>
         <Route path="/"  element={<Homepage registereduser={registereduser} registrationlimit={registrationlimit} list={list} setlist={setlist} datafetch={datafetch} notification={notification} modal={modal} setmodal={setmodal}/>} />
         <Route path="/admin" element={<Admin list={list} datafetch={datafetch} isadmin={isadmin} setadmin={setadmin} />} />

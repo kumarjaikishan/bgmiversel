@@ -23,7 +23,13 @@
     flex-direction: column;
     flex-wrap: wrap;
   }
-
+.list h2{
+  margin-left: 10px;
+  background: linear-gradient(90deg, #00cec9,#0984e3);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    text-align: center;
+}
   .list .ano{
     /* border: 1px solid red; */
     color: #242424;

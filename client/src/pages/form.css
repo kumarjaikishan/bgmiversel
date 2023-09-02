@@ -45,7 +45,7 @@
   }
   .form .under .logo img{
     width: 100%;
-    transform: scale(6);
+    transform: scale(2.6);
   }
   .form .inpu{
     /* border: 1px solid red; */
@@ -87,12 +87,17 @@
     padding: 5px 2px;
   }
   .form .social span{
+    /* width: 50px; */
     line-height: 10px;
     transform: scale(.7);
     padding: 5px;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.1s;
+  }
+  .form .social span img{
+    width: 40px;
+    cursor: pointer;
   }
   .form .social span:nth-child(1){
     background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);

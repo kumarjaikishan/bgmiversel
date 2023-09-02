@@ -3,7 +3,7 @@ import './navbar.css';
 import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({setmodal}) => {
   return (
     <>
       <div className='nav'>
@@ -16,6 +16,7 @@ const Navbar = () => {
             <li> <NavLink to='/' className={"hit"}> Registration </NavLink></li>
             <li> <NavLink to='/admin' className={"hit"}> Admin </NavLink></li>
             {/* <li> <NavLink to='/instant' className={"hit"}> Instant Match </NavLink></li> */}
+            <li onClick={()=> setmodal(true)}><b>Rule</b></li>
           </ul>
         </div>
       </div>

@@ -14,7 +14,7 @@ const List = ({ list }) => {
     return (
         <>
             <div className="list">
-                <h2>Classic Touranment</h2>
+                <h2>M24 Battle Touranment</h2>
                 <div className="aggre">
                     {
                         list.map((val, ind) => {
