@@ -37,7 +37,7 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
         //    data.id.length !==10 ? notification.warn("ID not valid", 1400):null;
         let check = false;
         if (data.id.length == 10 || data.id.length== 11) {
-            alert("ho jayega")
+            // alert("ho jayega")
         }else{
             setmsg({
                 id: "Character ID not Valid"
