@@ -1,0 +1,68 @@
+.rule{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    z-index: 16;
+}
+.rule .hell{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(0,0,0,0.3); */
+    /* z-index: -1;
+    border-radius: 50px;
+    backdrop-filter: blur(5px); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rule .box{
+    border: 1px solid red;
+    width: 50%;
+    height: 70%;
+    background: white;
+    color: black;
+    border-radius: 50px;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.rule .box::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+    backdrop-filter: blur(5px);
+}
+.rule ul{
+    list-style: none;
+}
+.rule .sno{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(90deg, #00cec9,#0984e3);
+    margin: 4px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+.rule .box h1{
+    background: linear-gradient(90deg, #00cec9,#0984e3);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}

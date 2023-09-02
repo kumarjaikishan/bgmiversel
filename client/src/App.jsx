@@ -15,6 +15,7 @@ function App() {
   useEffect(() => {
     datafetch();
   }, [])
+  const [modal,setmodal]=useState(true);
   const [registereduser, setregistereduser] = useState(0);
   const [registrationlimit,setregistrationlimit]= useState(16);
   const [isadmin,setadmin]= useState(false);
@@ -73,10 +74,11 @@ function App() {
       <ToastContainer />
       <Navbar />
       <Routes>
-        <Route path="/"  element={<Homepage registereduser={registereduser} registrationlimit={registrationlimit} list={list} setlist={setlist} datafetch={datafetch} notification={notification} />} />
+        <Route path="/"  element={<Homepage registereduser={registereduser} registrationlimit={registrationlimit} list={list} setlist={setlist} datafetch={datafetch} notification={notification} modal={modal} setmodal={setmodal}/>} />
         <Route path="/admin" element={<Admin list={list} datafetch={datafetch} isadmin={isadmin} setadmin={setadmin} />} />
         <Route path="/login" element={<Adminmid  setadmin={setadmin} notification={notification}/>} />
         <Route path="/instant" element={<Instant matlist={matlist} setmatlist={setmatlist} list={list} />} />
+        {/* <Route path="/rule" element={<Rule />} /> */}
       </Routes>
     </>
   )
