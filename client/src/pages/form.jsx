@@ -69,7 +69,7 @@ const Form = ({  notification, list, datafetch,registereduser,registrationlimit 
                 let torunaname = "classic";
                 let datee = new Date();
                 let date = datee.getFullYear() +"-"+datee.getUTCMonth()+"-"+datee.getUTCDate();
-                const result = await fetch('http://localhost:5000/addplayer', {
+                const result = await fetch('/addplayer', {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
