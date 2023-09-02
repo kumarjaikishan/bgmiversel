@@ -36,12 +36,14 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
     const submite = () => {
         //    data.id.length !==10 ? notification.warn("ID not valid", 1400):null;
         let check = false;
-        // if (data.id.length !== 10 || data.id.length !== 11) {
-        //     setmsg({
-        //         id: "Character ID not Valid"
-        //     })
-        //     return notification.warn("Character ID not Valid", 1400)
-        // }
+        if (data.id.length == 10 || data.id.length== 11) {
+            alert("ho jayega")
+        }else{
+            setmsg({
+                id: "Character ID not Valid"
+            })
+            return notification.warn("Character ID not Valid", 1400)
+        }
         if (data.name.length < 1) {
             setmsg({
                 name: "Name not Valid"
