@@ -10,13 +10,13 @@ import swal from 'sweetalert'
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
-const Form = ({  notification, list, datafetch,registereduser,registrationlimit }) => {
+const Form = ({ notification, list, datafetch, registereduser, registrationlimit }) => {
     const init = {
         name: "",
         id: ""
     }
     useEffect(() => {
-       
+
     }, [])
 
     const [msg, setmsg] = useState({
@@ -65,23 +65,28 @@ const Form = ({  notification, list, datafetch,registereduser,registrationlimit 
             const add = async () => {
                 let name = data.name;
                 let id = data.id
-                let stat ="pending";
+                let stat = "pending";
                 let torunaname = "classic";
                 let datee = new Date();
-                let date = datee.getFullYear() +"-"+datee.getUTCMonth()+"-"+datee.getUTCDate();
-                const result = await fetch('/addplayer', {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        torunaname, name, id, date,stat
+                let date = datee.getFullYear() + "-" + datee.getUTCMonth() + "-" + datee.getUTCDate();
+                try {
+                    const result = await fetch('/addplayer', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            torunaname, name, id, date, stat
+                        })
                     })
-                })
-                const detail = await result.json();
-                console.log(detail)
-                datafetch();
-                swal("Success!", "Your Registration Competed", "success");
+                    const detail = await result.json();
+                    console.log(detail)
+                    datafetch();
+                    swal("Success!", "Your Registration Competed", "success");
+                } catch (error) {
+                    console.log(error)
+                }
+              
             }
             add();
             return notification.success("Registration Successful", 1400)
@@ -125,14 +130,14 @@ const Form = ({  notification, list, datafetch,registereduser,registrationlimit 
                             </InputAdornment>,
                         }}
                     />
-                  <div className='errormsg'>
-                    {
-                        registereduser >=registrationlimit? "Sorry Registration Limit Reached":null
-                    }
-                  </div>
+                    <div className='errormsg'>
+                        {
+                            registereduser >= registrationlimit ? "Sorry Registration Limit Reached" : null
+                        }
+                    </div>
                 </div>
-                
-                <button type="submit" onClick={submite} disabled={registereduser >=registrationlimit ? true:false}>Register Me</button>
+
+                <button type="submit" onClick={submite} disabled={registereduser >= registrationlimit ? true : false}>Register Me</button>
                 <div className='social'>
                     <span>  <a href="https://www.youtube.com/@dozplayz" target='_blank' title='Official Youtube'> <YouTubeIcon className='fat' /></a></span>
                     <span>  <a href="https://www.instagram.com/doz_playz/" target='_blank' title='Official Instagram'> <InstagramIcon className='fat' /></a></span>

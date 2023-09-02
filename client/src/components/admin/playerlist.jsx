@@ -10,19 +10,24 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Playerlist = ({ list,datafetch }) => {
   const playeredit = async (id,set) => {
-    const result = await fetch('/playerapprove', {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id,set
+    try {
+      const result = await fetch('/playerapprove', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          id,set
+        })
       })
-    })
-    const detail = await result.json();
-    console.log(detail)
-    swal("Success!","User "+ set+ " Successfully", "success");
-    datafetch();
+      const detail = await result.json();
+      console.log(detail)
+      swal("Success!","User "+ set+ " Successfully", "success");
+      datafetch();
+    } catch (error) {
+      console.log(error);
+    }
+  
    
   }
   return (
