@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './admin.css'
 import Playerlist from './playerlist';
 import Team from './team';
+import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 
 const Admin = ({ list, datafetch, isadmin, setadmin }) => {
@@ -10,7 +11,7 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
     if (!isadmin) {
       navigate('/login');
       return;
-  }
+    }
     fune();
   }, [list])
 
@@ -58,21 +59,28 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
   }
 
   const finale = () => {
-    // console.log(team1[3]);
-    let finalone = [...team1];
-    let finaltwo = [...team2];
-    let tempteam1 = []
-    let tempteam2 = []
-    for (let i = 0; i < team1.length; i++) {
-      let rand1 = Math.ceil(Math.random() * finalone.length) - 1;
-      let rand2 = Math.ceil(Math.random() * finaltwo.length) - 1;
-      let part1 = finalone.splice(rand1, 1)
-      let part2 = finaltwo.splice(rand2, 1)
-      tempteam1.push(part1[0]);
-      tempteam2.push(part2[0]);
+    if (filteredlist.length % 2 === 0) {
+      let finalone = [...team1];
+      let finaltwo = [...team2];
+      let tempteam1 = []
+      let tempteam2 = []
+      for (let i = 0; i < team1.length; i++) {
+        let rand1 = Math.ceil(Math.random() * finalone.length) - 1;
+        let rand2 = Math.ceil(Math.random() * finaltwo.length) - 1;
+        let part1 = finalone.splice(rand1, 1)
+        let part2 = finaltwo.splice(rand2, 1)
+        tempteam1.push(part1[0]);
+        tempteam2.push(part2[0]);
+      }
+      setfinal1(tempteam1);
+      setfinal2(tempteam2);
+      return;
+    } else {
+      console.log("The number is odd.");
+      swal("Stop!", "Number of Player Is Odd, please make it Even", "warn");
+      return;
     }
-    setfinal1(tempteam1);
-    setfinal2(tempteam2);
+
   }
   return (
     <div className="admin">
@@ -82,7 +90,7 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
       </div> */}
       <div className='headcontrol'>
         <span>
-         <b><span className='titlee'>M24 Touranment</span></b> 
+          <b><span className='titlee'>M24 Touranment</span></b>
           {/* <input type="text" /> */}
         </span>
         <span>

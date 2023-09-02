@@ -27,12 +27,12 @@ const List = ({ list }) => {
                                 </span>
                                 {/* <span className='stat' title='Approval Status'><ThumbUpIcon className='staticon'/></span> */}
                                 <span className='stat' title={val.stat == "done" ? "Approval Done" : "Approval Pending"}>
-                                {
-              val.stat == "approve" ?
-               <ThumbUpIcon className='staticon' titleAccess='Approved' /> : 
-               val.stat == "reject" ?<CancelIcon className='staticon reject' titleAccess='Rejected' />:
-               <HourglassTopIcon className='staticon pending' titleAccess='Pending' />
-              }
+                                    {
+                                        val.stat == "approve" ?
+                                            <ThumbUpIcon className='staticon' titleAccess='Approved' /> :
+                                            val.stat == "reject" ? <CancelIcon className='staticon reject' titleAccess='Rejected' /> :
+                                                <HourglassTopIcon className='staticon pending' titleAccess='Pending' />
+                                    }
                                 </span>
                             </div>
                         })

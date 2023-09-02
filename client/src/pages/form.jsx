@@ -36,23 +36,23 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
     const submite = () => {
         //    data.id.length !==10 ? notification.warn("ID not valid", 1400):null;
         let check = false;
-        if (data.id.length !== 10) {
+        if (data.id.length !== 11) {
             setmsg({
                 id: "Character ID not Valid"
             })
-            return notification.warn("Id not Valid", 1400)
+            return notification.warn("Id must be 11 digit", 1400)
         }
-        if (data.name.length < 3) {
+        if (data.name.length < 1) {
             setmsg({
                 name: "Name not Valid"
             })
-            return notification.warn("Name not valid", 1400)
+            return notification.warn("Name can't be empty", 1400)
         }
 
         list.map((val) => {
             if (val.id === data.id) {
                 check = true;
-                return notification.warn("Already Registered", 1400)
+                return notification.warn("Player Already Registered", 1400)
             }
         })
 
@@ -120,7 +120,7 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
                         size="small"
                         className='filled'
                         onChange={handle}
-                        color={data.id.length == 10 ? "primary" : "warning"}
+                        color={data.id.length == 11 ? "primary" : "warning"}
                         onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
                         name="id"
                         helperText={msg.id}
