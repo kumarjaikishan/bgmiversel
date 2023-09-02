@@ -15,7 +15,7 @@ const Navbar = () => {
           <ul>
             <li> <NavLink to='/' className={"hit"}> Registration </NavLink></li>
             <li> <NavLink to='/result' className={"hit"}> Admin </NavLink></li>
-            <li> <NavLink to='/instant' className={"hit"}> Instant Match </NavLink></li>
+            {/* <li> <NavLink to='/instant' className={"hit"}> Instant Match </NavLink></li> */}
           </ul>
         </div>
       </div>

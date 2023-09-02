@@ -40,7 +40,7 @@ function App() {
     }
   }
   const datafetch = async () => {
-    const result = await fetch('http://localhost:5000/getplayer', {
+    const result = await fetch('/getplayer', {
       method: "GET",
       headers: {
         "Content-Type": "application/json"

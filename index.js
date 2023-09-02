@@ -2,12 +2,9 @@ const express = require('express');
 const app = express();
 const model = require('./conn/expschema')
 const port = process.env.PORT || 5000;
-const fileupload = require('express-fileupload')
-const fs = require('fs');
 
 app.use(express.json());
 require('./conn/conn')
-require('./test');
 
 // if(process.env.NODE_ENV=='production'){
 //     const path = require('path')
