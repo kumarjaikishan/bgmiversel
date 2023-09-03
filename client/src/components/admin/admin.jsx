@@ -94,10 +94,14 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
         <span>
           <button onClick={() => settoggle(false)}>Home</button>
           <button onClick={() => settoggle(true)} >Teams</button>
-          <button onClick={fun}>Create Team</button>
-          <button onClick={finale}>Battle</button>
+         
         </span>
       </div>
+      {toggle ?   <div className='belowhead'>
+        <button onClick={fun}>Create Team</button>
+          <button onClick={finale}>Battle</button>
+      </div>:null}
+    
 
       {
         toggle ? <Team team1={team1} team2={team2} final1={final1} final2={final2} /> : <Playerlist list={list} datafetch={datafetch} />
