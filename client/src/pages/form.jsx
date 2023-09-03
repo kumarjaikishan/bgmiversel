@@ -36,7 +36,7 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
     const submite = () => {
         //    data.id.length !==10 ? notification.warn("ID not valid", 1400):null;
         let check = false;
-        if (data.id.length == 10 || data.id.length== 11) {
+        if (data.id.length >= 8 && data.id.length <= 12) {
             // alert("ho jayega")
         }else{
             setmsg({
@@ -121,8 +121,9 @@ const Form = ({ notification, list, datafetch, registereduser, registrationlimit
                         label="Character ID*"
                         size="small"
                         className='filled'
+                        type="number"
                         onChange={handle}
-                        color={data.id.length == 10 ||data.id.length == 11 ? "primary" : "warning"}
+                        color={data.id.length >= 8 && data.id.length <= 12 ? "primary" : "warning"}
                         onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}
                         name="id"
                         helperText={msg.id}

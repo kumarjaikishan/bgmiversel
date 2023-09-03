@@ -24,7 +24,7 @@ const Admindis = ({setadmin,notification}) => {
         <>
             {
                 <div className="modal">
-                    <input type="text" placeholder='Enter password' onChange={handle} name='inp' />
+                    <input type="password" placeholder='Enter password' onChange={handle} name='inp' />
                     <button onClick={test}>Submit</button>
                 </div>
             }

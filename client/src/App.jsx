@@ -16,6 +16,7 @@ function App() {
     datafetch();
   }, [])
   const [modal,setmodal]=useState(true);
+  const [loader,setloader]= useState(false);
   const [registereduser, setregistereduser] = useState(0);
   const [registrationlimit,setregistrationlimit]= useState(16);
   const [isadmin,setadmin]= useState(false);

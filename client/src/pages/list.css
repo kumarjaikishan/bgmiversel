@@ -26,7 +26,7 @@
   flex-wrap: wrap;
 }
 
-.list h2 {
+.list>h2 {
   margin-left: 10px;
   background: linear-gradient(90deg, #00cec9, #0984e3);
   -webkit-text-fill-color: transparent;

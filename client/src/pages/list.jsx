@@ -3,17 +3,17 @@ import './list.css'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import CancelIcon from '@mui/icons-material/Cancel';
+import Loader from '../components/loader/loader'
 
-const List = ({ list }) => {
-    useEffect(() => {
-    }, [])
-
+const List = ({ list ,loader}) => {
     const hell = () => {
         console.log(list.list)
     }
     return (
         <>
+
             <div className="list">
+                {loader? <Loader/>:null}
                 <h2>M24 Battle Touranment- 16 Players</h2>
                 <div className="aggre">
                     {

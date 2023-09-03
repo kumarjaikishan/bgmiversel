@@ -5,7 +5,7 @@ import Team from './team';
 import swal from 'sweetalert'
 import { useNavigate } from "react-router-dom";
 
-const Admin = ({ list, datafetch, isadmin, setadmin }) => {
+const Admin = ({ list, datafetch, isadmin }) => {
   let navigate = useNavigate();
   useEffect(() => {
     if (!isadmin) {
@@ -15,7 +15,6 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
     fune();
   }, [list])
 
-  const [inp, setinp] = useState("")
   const [toggle, settoggle] = useState(false);
   const [team1, setteam1] = useState([]);
   const [team2, setteam2] = useState([]);
@@ -30,15 +29,6 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
       }
     })
     setfilteredlist(temp);
-  }
-  const handle = (e) => {
-    setinp(e.target.value);
-  }
-
-  const test = () => {
-    if (inp == "sparrowisgreat") {
-      setadmin(true)
-    }
   }
 
   const fun = () => {
@@ -84,7 +74,6 @@ const Admin = ({ list, datafetch, isadmin, setadmin }) => {
   }
   return (
     <div className="admin">
-     
       <div className='headcontrol'>
         <span>
           <b><span className='titlee'>M24 Touranment</span></b>
