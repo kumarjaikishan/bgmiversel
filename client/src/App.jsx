@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     datafetch();
   }, [])
-  const [modal,setmodal]=useState(true);
+  const [modal,setmodal]=useState(false);
   const [loader,setloader]= useState(false);
   const [registereduser, setregistereduser] = useState(0);
   const [registrationlimit,setregistrationlimit]= useState(16);
